@@ -7,3 +7,6 @@ __pycache__/
 
 # Ignorar carpetas Git internas (por si acaso copiaste alguna)
 **/.git/
+
+# Ignore environment variables file
+.env
