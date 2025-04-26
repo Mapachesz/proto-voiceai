@@ -1,0 +1,9 @@
+# Ignorar entorno virtual
+venv/
+
+# Ignorar cachés de Python
+__pycache__/
+*.pyc
+
+# Ignorar carpetas Git internas (por si acaso copiaste alguna)
+**/.git/
