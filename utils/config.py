@@ -4,7 +4,7 @@ import os
 # Cargar automáticamente variables del archivo .env
 load_dotenv()
 
-# Configuración
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-WHISPER_MODEL_SIZE = "tiny"
+# Configuration
+HF_MODEL_NAME = os.getenv("HF_MODEL_NAME", "microsoft/DialoGPT-medium")
+VOSK_MODEL_PATH = os.getenv("VOSK_MODEL_PATH", "model")
 TTS_MODEL_NAME = "tts_models/en/ljspeech/tacotron2-DDC"
