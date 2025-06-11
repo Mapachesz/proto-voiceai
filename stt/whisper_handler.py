@@ -1,6 +1,11 @@
 import numpy as np
 import sounddevice as sd
-from faster_whisper import WhisperModel
+try:
+    from faster_whisper import WhisperModel
+except ModuleNotFoundError as exc:
+    raise ModuleNotFoundError(
+        "faster_whisper is not installed. Install dependencies with 'pip install -r requirements.txt'."
+    ) from exc
 from utils.config import WHISPER_MODEL_SIZE
 
 _model = WhisperModel(WHISPER_MODEL_SIZE)
