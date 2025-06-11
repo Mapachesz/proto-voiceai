@@ -1,10 +1,10 @@
 # Proto Voice AI
 
-This project simulates a simple phone call. It listens to the microphone, uses [Vosk](https://alphacephei.com/vosk/) to transcribe speech, generates a reply with a local HuggingFace model, and reads the response with Coqui TTS.
+This project simulates a simple phone call. It listens to the microphone using Whisper, sends the transcript to OpenAI's chat API, and speaks the response with Coqui TTS.
 
 ## Installation
 
-1. (Optional) create a virtual environment:
+1. (Optional) create a Python 3.11 virtual environment:
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Windows use .venv\Scripts\activate
@@ -13,9 +13,10 @@ This project simulates a simple phone call. It listens to the microphone, uses [
    ```bash
    pip install -r requirements.txt
    ```
-3. Download a Vosk model (e.g. `vosk-model-small-es-0.42`) and set the path in a `.env` file if different:
+3. Create a `.env` file with your API key and Whisper model size:
    ```
-   VOSK_MODEL_PATH=/path/to/vosk-model
+   OPENAI_API_KEY=your-key-here
+   WHISPER_MODEL_SIZE=small
    ```
 
 ## Usage

@@ -1,7 +1,7 @@
 import signal
 
-from llm.hf_handler import ask_model
-from stt.vosk_handler import listen_and_transcribe
+from llm.openai_handler import ask_openai
+from stt.whisper_handler import listen_and_transcribe
 from tts.tts_handler import speak_text
 
 
@@ -15,7 +15,7 @@ def run_call():
             if not user_text:
                 continue
             print(f"User: {user_text}")
-            response, conversation = ask_model(user_text, conversation)
+            response, conversation = ask_openai(user_text, conversation)
             print(f"Assistant: {response}")
             speak_text(response)
     except KeyboardInterrupt:
